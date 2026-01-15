@@ -1,10 +1,12 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from '../auth';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [MatCardModule, MatButtonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
