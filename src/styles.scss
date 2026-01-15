@@ -35,3 +35,11 @@
 .mat-mdc-button:hover {
   background-color: #2563eb !important; /* blue-600 */
 }
+
+.mat-mdc-raised-button {
+  color: white !important;
+}
+
+.mat-mdc-button .mdc-button__label {
+  color: white !important;
+}
