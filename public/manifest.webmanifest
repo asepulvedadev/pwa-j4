@@ -1,0 +1,17 @@
+{
+  "name": "Grupo J4",
+  "short_name": "J4",
+  "description": "Aplicación PWA para Grupo J4",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/img/J4ACTUALIZADO.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
