@@ -1,55 +1,55 @@
 <div class="min-h-screen bg-black flex items-center justify-center px-4">
-  <mat-card class="max-w-md w-full">
-    <mat-card-header class="text-center">
-      <img mat-card-avatar src="/img/J4ACTUALIZADO.png" alt="Logo J4" class="mx-auto h-16 w-auto">
-      <mat-card-title class="text-2xl">Iniciar Sesión</mat-card-title>
-    </mat-card-header>
+  <div class="max-w-md w-full bg-gray-800 rounded-lg shadow-lg p-8">
+    <div class="text-center mb-8">
+      <img src="/img/J4ACTUALIZADO.png" alt="Logo J4" class="mx-auto h-16 w-auto mb-4">
+      <h2 class="text-2xl font-bold text-white">Iniciar Sesión</h2>
+    </div>
 
-    <mat-card-content>
-      <form (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
-        <mat-form-field appearance="fill">
-          <mat-label>Correo Electrónico</mat-label>
-          <input
-            matInput
-            type="email"
-            [(ngModel)]="email"
-            name="email"
-            required
-            placeholder="tu@email.com"
-          />
-        </mat-form-field>
+    <form (ngSubmit)="onSubmit()" class="space-y-6">
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Correo Electrónico</mat-label>
+        <input
+          matInput
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          placeholder="tu@email.com"
+        />
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-          <mat-label>Contraseña</mat-label>
-          <input
-            matInput
-            type="password"
-            [(ngModel)]="password"
-            name="password"
-            required
-            placeholder="••••••••"
-          />
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Contraseña</mat-label>
+        <input
+          matInput
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+          placeholder="••••••••"
+        />
+      </mat-form-field>
 
-        @if (error(); as errorMessage) {
-          <mat-error>{{ errorMessage }}</mat-error>
+      @if (error(); as errorMessage) {
+        <div class="bg-red-900 border border-red-700 text-red-200 px-4 py-3 rounded">
+          {{ errorMessage }}
+        </div>
+      }
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="loading()"
+        class="w-full"
+      >
+        @if (loading()) {
+          <mat-spinner diameter="20" class="mr-2"></mat-spinner>
+          Iniciando...
+        } @else {
+          Iniciar Sesión
         }
-
-        <button
-          mat-raised-button
-          color="primary"
-          type="submit"
-          [disabled]="loading()"
-          class="w-full"
-        >
-          @if (loading()) {
-            <mat-spinner diameter="20" class="mr-2"></mat-spinner>
-            Iniciando...
-          } @else {
-            Iniciar Sesión
-          }
-        </button>
-      </form>
-    </mat-card-content>
-  </mat-card>
+      </button>
+    </form>
+  </div>
 </div>
